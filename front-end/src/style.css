@@ -1,0 +1,75 @@
+:root {
+  --primary: #009bde;
+  --secondary-blue: #0379ab;
+  --third-blue: #78d7ff;
+  --white: #FFFFFF;
+  --gray: #dfdfdf;
+  --active: #004563;
+  --shadow: #888888;
+}
+
+body {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: var(--white);
+}
+
+button {
+  cursor: pointer;
+}
+
+button:not(.invisible, .Toastify__close-button) {
+  padding: 10px;
+  border: 0;
+  background-color: var(--third-blue);
+  border-radius: 10px;
+}
+
+button.invisible {
+  border: 0;
+  background-color: transparent;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, p {
+  margin: 0 ;
+}
+
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+textarea {
+  resize: vertical;
+  width: 100%;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  min-height: 60px;
+}
+
+.styled-input-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.styled-input-container > label {
+  font-size: 18px;
+  color: var(--active);
+  font-weight: 600;
+}
+.styled-input {
+  background-color: var(--gray);
+  padding: 10px;
+  border-radius: 8px;
+  border: 0;
+  box-shadow: 1px 3px 5px var(--shadow);
+}
+
+.styled-input:focus-visible {
+  outline: -webkit-focus-ring-color auto 0px;
+}

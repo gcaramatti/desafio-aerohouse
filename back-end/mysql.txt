@@ -1,0 +1,23 @@
+1a) O nome da organização que foi fundada por último:
+    SELECT nome FROM organizacao ORDER BY data_fundacao DESC LIMIT 1;
+
+1b) O nome do colaborador com salário maior:
+    SELECT nome FROM colaborador ORDER BY salario DESC LIMIT 1;
+
+1c) O nome e data de nascimento dos colaboradores ordenados por salário, do maior para o menor:
+    SELECT nome, data_nascimento FROM colaborador ORDER BY salario DESC;
+
+1d) A idade dos colaboradores:
+    SELECT nome, TIMESTAMPDIFF(YEAR, data_nascimento, CURDATE()) AS idade FROM colaborador;
+
+1e) O nome dos colaboradores e da empresa que eles fazem parte:
+    SELECT c.nome AS colaborador, o.nome AS organizacao FROM colaborador c JOIN organizacao o ON c.organizacao_id = o.id;
+
+A organização que paga o maior salário:
+    SELECT o.nome FROM organizacao o JOIN colaborador c ON o.id = c.organizacao_id ORDER BY c.salario DESC LIMIT 1;
+
+A média de salários pagos por cada empresa:
+    SELECT o.nome, AVG(c.salario) AS media_salario FROM organizacao o JOIN colaborador c ON o.id = c.organizacao_id GROUP BY o.nome;
+
+A organização que tem o funcionário mais novo:
+    SELECT o.nome FROM organizacao o JOIN colaborador c ON o.id = c.organizacao_id ORDER BY c.data_nascimento ASC LIMIT 1;
